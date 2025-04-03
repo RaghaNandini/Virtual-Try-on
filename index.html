@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSync</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Splash Screen (Logo) -->
+    <div id="splash-screen">
+        <img src="logo.png" alt="StyleSync Logo" class="logo">
+    </div>
+
+    <!-- Main Landing Page -->
+    <div id="main-content" class="hidden">
+        <header>
+            <div class="logo-title">Virtual Try-On</div>
+            <nav>
+                <a href="#">Dresses</a>
+                <a href="#">Try On</a>
+                <button id="loginBtn" class="login-btn">Login / Sign Up</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Virtual Try-On Experience</h1>
+            <p>Try clothes virtually, get weather-based recommendations, and find your perfect style match with our AI-powered platform.</p>
+            <button class="try-now-btn">Try Now →</button>
+        </section>
+
+        <section class="features">
+        <div class="feature" id="virtualTryOnFeature">
+            <div class="icon-box">
+                <img src="camera-icon.png" alt="Virtual Try-On">
+            </div>
+            <h2>Virtual Try-On</h2>
+            <p>Try clothes virtually using your camera or uploaded photos in real-time.</p>
+        </div>
+        <div class="feature" id="weatherSuggestionsFeature">
+            <div class="icon-box">
+                <img src="weather-icon.png" alt="Weather-Based Suggestions">
+            </div>
+            <h2>Weather-Based Suggestions</h2>
+            <p>Get personalized outfit recommendations based on current weather conditions.</p>
+        </div>
+    </section>
+</div>
+
+<!-- Authentication Modal -->
+<div id="authModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">×</span>
+        <div class="modal-header">
+            <button id="loginTab" class="tab-btn active">Login</button>
+            <button id="signupTab" class="tab-btn">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+            <h2>Login to StyleSync</h2>
+            <div class="form-group">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <span class="error-message" id="loginEmailError"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <span class="error-message" id="loginPasswordError"></span>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="auth-form" style="display: none;">
+            <h2>Sign Up for StyleSync</h2>
+            <div class="form-group">
+                <input type="text" id="signupName" placeholder="Full Name" required>
+                <span class="error-message" id="signupNameError"></span>
+            </div>
+            <div class="form-group">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <span class="error-message" id="signupEmailError"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <span class="error-message" id="signupPasswordError"></span>
+            </div>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+
+        <button class="guest-btn">Continue as Guest</button>
+    </div>
+</div>
+
+<!-- Virtual Try-On Modal (Dress Categories) -->
+<div id="virtualTryOnModal" class="modal">
+    <div class="modal-content">0
+        <span class="close-btn">×</span>
+        <h2>Choose a Dress Category to Try On</h2>
+        <div class="dress-gallery" id="virtualTryOnGallery">
+            <!-- Dress categories will be dynamically added via JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Dress Sub-Gallery Modal (Specific Dresses in a Category) -->
+<div id="dressSubGalleryModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">×</span>
+        <h2 id="subGalleryTitle">Select a Dress</h2>
+        <div class="dress-gallery" id="dressSubGallery">
+            <!-- Specific dresses will be dynamically added via JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Weather-Based Suggestions Modal -->
+<div id="weatherSuggestionsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">×</span>
+        <h2>Weather-Based Dress Recommendations</h2>
+        <p id="weatherInfo">Current Weather: Loading...</p>
+        <div class="dress-gallery" id="weatherSuggestionsGallery">
+            <!-- Dresses will be dynamically added via JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Virtual Try-On Experience Modal -->
+<div id="virtualTryOnExperienceModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">×</span>
+        <h2>Virtual Try-On Experience</h2>
+        <p id="tryOnDressName">Trying on: [Dress Name]</p>
+        <canvas id="tryOnCanvas" width="400" height="600"></canvas>
+        <button id="tryAnotherBtn" class="try-another-btn">Try Another Dress</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

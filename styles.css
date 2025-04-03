@@ -1,0 +1,500 @@
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #29ac81;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Splash Screen */
+#splash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+.logo {
+    width: 150px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Hide Main Content Initially */
+.hidden {
+    display: none;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.logo-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #804a4a;
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff416c;
+}
+
+/* Login/Signup Button */
+.login-btn {
+    background: #ff416c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background: #e6395f;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: bold;
+    max-width: 800px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Try Now Button */
+.try-now-btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.try-now-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Box */
+.icon-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.feature p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Modal (General) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-btn:hover {
+    color: #ff416c;
+}
+
+/* Auth Modal Specific */
+#authModal .modal-content {
+    width: 450px;
+}
+
+/* Modal Header (Tabs) */
+.modal-header {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.tab-btn.active {
+    color: #ff416c;
+    border-bottom: 2px solid #ff416c;
+}
+
+.tab-btn:hover {
+    color: #ff416c;
+}
+
+/* Auth Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.auth-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #ff416c;
+    box-shadow: 0 0 5px rgba(255, 65, 108, 0.3);
+}
+
+.error-message {
+    color: #ff416c;
+    font-size: 12px;
+    min-height: 16px;
+}
+
+.submit-btn {
+    background: #ff416c;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e6395f;
+}
+
+.guest-btn {
+    background: none;
+    color: #666;
+    border: none;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.guest-btn:hover {
+    color: #ff416c;
+}
+
+/* Dress Gallery */
+.dress-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.dress-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.dress-card:hover {
+    transform: translateY(-5px);
+}
+
+.dress-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.dress-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dress-card button {
+    background: #ff416c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.dress-card button:hover {
+    background: #e6395f;
+}
+
+#weatherInfo {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Virtual Try-On Experience Modal */
+#virtualTryOnExperienceModal .modal-content {
+    width: 450px;
+    text-align: center;
+}
+
+#tryOnDressName {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#tryOnCanvas {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+.try-another-btn {
+    background: #ff416c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.try-another-btn:hover {
+    background: #e6395f;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .try-now-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .feature {
+        max-width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .dress-card {
+        width: 100%;
+        max-width: 250px;
+    }
+}
